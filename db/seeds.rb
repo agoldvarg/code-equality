@@ -1,4 +1,3 @@
-
 parsed_subjects_array = []
 
 File.read("./db/data/raw_data.csv").split("\n").each do |subject|
@@ -7,6 +6,16 @@ File.read("./db/data/raw_data.csv").split("\n").each do |subject|
   parsed_subjects_array << "#{first_name} #{last_name}"
 end
 
-parsed_subjects_array.collect do |subject|
-  subject.gsub!(/ë/, 'e').gsub!(/ö/, 'o').gsub!(/ğ/, 'g').gsub!(/Ö/, 'O')
+sanitized_subjects = []
+
+parsed_subjects_array.each do |subject|
+  subject.gsub!(/ë/, 'e')
+  subject.gsub!(/ö/, 'o')
+  subject.gsub!(/ğ/, 'g')
+  subject.gsub!(/Ö/, 'O')
+  sanitized_subjects << subject
+end
+
+sanitized_subjects.each do |subject|
+  Subject.create(name: subject)
 end
