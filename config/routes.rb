@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   get '/about' => 'subjects#about'
 
-  get '/index' => 'subjects#index'
+  resources :subjects
 
 end
