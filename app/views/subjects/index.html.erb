@@ -1,1 +1,20 @@
-<h1>Hello</h1>
+<div class="container-fluid">
+  <div class="well">
+    <div class="panel">
+      <h1 style="margin-top: 10px;">WITH WIKIS</h1>
+    </div>
+    <div class="panel">
+      <ul>
+        <%= render partial: 'subject', collection: @subjects_with %>
+      </ul>
+    </div>
+    <div class="panel">
+      <h1 style="margin-top: 10px;">WITHOUT WIKIS</h1>
+    </div>
+    <div class="panel">
+      <ul>
+        <%= render partial: 'subject', collection: @subjects_without %>      
+      </ul>
+    </div>
+  </div>
+</div>
