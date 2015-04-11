@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411162307) do
+ActiveRecord::Schema.define(version: 20150411165451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "has_wiki_page"
+    t.string   "wiki_page_link"
+    t.string   "bio"
+    t.string   "wiki_create_link"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.string   "html"
+    t.integer  "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
