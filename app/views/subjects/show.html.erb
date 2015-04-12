@@ -1,28 +1,9 @@
 <div class="container-fluid">
   <div class="well">
-    <div class="row">   
-      <div class="col-md-10 col-md-offset-1">
-        <div class="panel" id="subject-panel-header">
-          <% if @subject.has_wiki_page %>
-            <h1><%= @subject.name.upcase %> <span id="yay">HAS</span> A WIKI PAGE</h1>
-          <% else %>
-            <h1><%= @subject.name.upcase %> <span id="nay">NEEDS</span> A WIKI PAGE</h1>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="panel">
-          <div class="panel-body">
-            <% if @subject.has_wiki_page %>
-              <p><%= @subject.bio %></p>
-            <% else %>
-              
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+    <% if @subject.has_wiki_page %>
+      <%= render 'subject_with_wiki' %>
+    <% else %>
+      <%= render 'subject_without_wiki' %>
+    <% end %>
   </div>
 </div>
