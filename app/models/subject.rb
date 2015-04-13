@@ -2,6 +2,7 @@ class Subject < ActiveRecord::Base
   has_many  :tweets
 
   def has_page?(url)
+    # binding.pry
     begin
       html = open(url)
       true
