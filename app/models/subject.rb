@@ -1,5 +1,6 @@
 class Subject < ActiveRecord::Base
   has_many  :tweets
+  after_create :pull_tweets
 
   def has_page?(url)
     # binding.pry
@@ -13,4 +14,7 @@ class Subject < ActiveRecord::Base
     end
   end
 
+  def pull_tweets
+
+  end
 end

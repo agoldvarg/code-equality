@@ -14,17 +14,19 @@ class SubjectsController < ApplicationController
 
   def search
     @q = params[:search]
-    # results will either be a new object, or an existing one
-    # render the results
     @results = Search.search(@q)
     if @results
-      # render subjects show page
+      redirect_to subject_path(@results)
     else
-      # render form to create the subject
+      redirect_to new_subject_path
     end
   end
 
   def create
-    # answers the search method if there was no subject matching query
+    
+  end
+
+  def new
+    @subject = Subject.new
   end
 end
