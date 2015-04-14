@@ -1,20 +1,31 @@
 <div class="container">
-  <div class="well col-md-10 col-md-offset-1">
-    <div class="panel">
-      <h1 style="margin-top: 10px; text-align: center;">WITH WIKIS</h1>
+  <div class="row">
+    <br>
+  </div>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">WOMEN WITHOUT WIKIPEDIA PAGES</a></h1>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel panel-body index">
+          <ul class="list-unstyled">
+            <%= render partial: 'subject', collection: @subjects_without %>      
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="panel">
-      <ul>
-        <%= render partial: 'subject', collection: @subjects_with %>
-      </ul>
-    </div>
-    <div class="panel">
-      <h1 style="margin-top: 10px; text-align: center;">WITHOUT WIKIS</h1>
-    </div>
-    <div class="panel">
-      <ul>
-        <%= render partial: 'subject', collection: @subjects_without %>      
-      </ul>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">WOMEN WITH WIKIPEDIA PAGES</a></h1>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel panel-body index">
+          <ul class="list-unstyled">
+            <%= render partial: 'subject', collection: @subjects_with %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

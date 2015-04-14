@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'subjects#about'
 
   get '/about' => 'subjects#about'
+  get '/resources' => 'subjects#resources'
 
   resources :subjects
 

@@ -1,9 +1,5 @@
-<div class="container">
-  <div class="well col-md-10 col-md-offset-1">
-    <% if @subject.has_wiki_page %>
-      <%= render 'subject_with_wiki' %>
-    <% else %>
-      <%= render 'subject_without_wiki' %>
-    <% end %>
-  </div>
-</div>
+<% if @subject.has_wiki_page %>
+  <%= render 'subject_with_wiki' %>
+<% else %>
+  <%= render 'subject_without_wiki' %>
+<% end %>

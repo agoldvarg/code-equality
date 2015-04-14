@@ -18,11 +18,11 @@
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
  */
-@import "bootstrap";
+/*@import "bootstrap";*/
 /* Some Style from the Bootstrap Default Theme */
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .theme-dropdown .dropdown-menu {
@@ -33,4 +33,100 @@ body {
 
 .theme-showcase > p > .btn {
   margin: 5px 0;
+}
+
+.main a {
+  color: #0E78FF;
+}
+
+.navbar-inverse {
+  background-color: #0E78FF;
+}
+
+.navbar-inverse .navbar-brand {
+  font-size: 2em;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+  background-color: white;
+  color: #0E78FF;
+}
+
+.navbar {
+  padding: 1.05em;
+  position: fixed;
+}
+
+.btn-default {
+  color: #0E78FF;
+  background-color: white;
+  border-color: white;
+}
+
+.container .main {
+  position: relative;
+}
+
+.footer-text, .footer-text a {
+  text-align: center;
+  color: white;
+}
+
+.footer-text a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.jumbotron {
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 50px;
+  background-color: #f5f5f5;
+}
+
+.jumbotron a, a:hover{
+  color: #0E78FF;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+.index {
+  padding-top: .25em;
+  column-count: 3;
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+
+  column-gap: 1em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+}
+
+.index li {
+  padding-left: .5em;
+}
+
+.index li a {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: black;
+}
+
+.index li a:hover {
+  text-decoration: none;
+  border-bottom: 3px #0E78FF solid;
+}
+
+.panel-heading h1 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.panel-heading a:hover, .panel-heading a:focus {
+  text-decoration: none;
+}
+
+.panel-body {
+  padding-top: 1em;
 }
