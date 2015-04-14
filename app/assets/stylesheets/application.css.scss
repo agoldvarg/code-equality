@@ -45,6 +45,12 @@ body {
 
 .navbar-inverse .navbar-brand {
   font-size: 2em;
+  font-weight: 600;
+}
+
+.navbar-inverse .navbar-nav {
+  font-weight: 500;
+  font-size: 1.1em;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
