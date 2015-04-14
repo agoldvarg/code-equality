@@ -10,6 +10,11 @@
 <body>
   <%= render 'layouts/navbar' %>
   <div class="container main">
+    <% if params[:action] == 'random' %>
+      <div class="refresh-button">
+        <%= link_to "See another woman in technology.", random_path, class: 'btn btn-primary btn-lg' %>
+      </div>
+    <% end %>
     <%= yield %>
   </div>
   <%= render 'layouts/footer' %>
