@@ -138,9 +138,17 @@ h2 {
   padding-top: 1em;
 }
 
-.btn-lg {
-  margin-bottom: 1em;
+.btn-lg .btn-primary {
   background-color: #0E78FF;
+}
+
+.jumbotron .btn {
+  color: white;
+  margin-bottom: 1.5em;
+}
+
+.jumbotron .btn a {
+  color: white;
 }
 
 .refresh-button {
