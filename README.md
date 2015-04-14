@@ -1,5 +1,7 @@
 # Code Equality
 
+[![Code Climate](https://codeclimate.com/github/agoldvarg/code-equality/badges/gpa.svg)](https://codeclimate.com/github/agoldvarg/code-equality)
+
 ## Description
 
 A simple web app to highlight the dearth of information on Wikipedia about important women in technology.
