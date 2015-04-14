@@ -29,4 +29,8 @@ class SubjectsController < ApplicationController
   def new
     @subject = Subject.new
   end
+
+  def random
+    @subject = Subject.find(rand(Subject.count))
+  end
 end
