@@ -3,5 +3,7 @@
   <h2>HAS A WIKIPEDIA PAGE</h2>
   <h3><%= link_to "Help make it better!", @subject.wiki_page_link, target: "_blank" %></h3>
 </div>
-<p><%= @subject.bio %></p>
+<div class="jumbotron">
+  <h3><%= @subject.bio %></h3>
+</div>
 
