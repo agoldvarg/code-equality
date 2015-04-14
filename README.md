@@ -20,7 +20,7 @@ Inspired by Art+Feminism (art.plusfeminism.org) and the CRA-W and Anita Borg Ins
 
 
 ## Development/Contribution
-
+[![Code Climate](https://codeclimate.com/github/agoldvarg/code-equality/badges/gpa.svg)](https://codeclimate.com/github/agoldvarg/code-equality)
 
 ## Future
 
