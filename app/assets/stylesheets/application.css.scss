@@ -149,6 +149,11 @@ h2 {
   color: white;
 }
 
+.jumbotron h2 {
+  font-size: 2em;
+  padding-bottom: 1em;
+}
+
 .refresh-button {
   margin: auto;
   text-align: center;
@@ -169,4 +174,8 @@ h2 {
 
 .glyphicon-refresh {
   font-size: 1.5em;
+}
+
+#tweets {
+  text-align: center;
 }

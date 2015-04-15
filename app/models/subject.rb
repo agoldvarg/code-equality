@@ -21,7 +21,7 @@ class Subject < ActiveRecord::Base
     end
     client.search(self.name, result_type: type = "mixed", lang: "en").take(10).each do |tweet|
       html = client.oembed(tweet.id).html
-      tweets << html if !tweets.include?(html)
+      tweets << html if !tweets.include?(html) && tweet.text.include?(self.name)
     end
     tweets
   end
