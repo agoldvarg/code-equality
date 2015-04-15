@@ -9,6 +9,8 @@
 <div class="col-md-1"></div>
 <div class="col-md-7 jumbotron">
   <h2>Here's what people are saying about her on Twitter:</h2>
-  <h3>INSERT TWITTER FEED HERE</h3>
+  <div id="tweets">
+    <%= render 'subjects/tweet', subject: @subject %>
+  </div>
 </div>
 
