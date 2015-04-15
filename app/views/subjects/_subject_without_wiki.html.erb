@@ -5,5 +5,7 @@
 </div>
 <div class="jumbotron">
   <h3>Here's what people are saying about her on Twitter:</h3>
-  <h4>INSERT TWITTER FEED HERE</h4>
+  <div id="tweets">
+    <%= render 'subjects/tweet', subject: @subject %>
+  </div>
 </div>
