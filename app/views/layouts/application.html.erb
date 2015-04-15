@@ -12,7 +12,9 @@
   <div class="container main">
     <% if params[:action] == 'random' %>
       <div class="refresh-button">
-        <%= link_to "See another woman in technology.", random_path, class: 'btn btn-primary btn-lg' %>
+        <%# link_to "<span class="glyphicon glyphicon-refresh"></span>",
+        random_path %>
+        <h5>See another woman in technology.</h5>
       </div>
     <% end %>
     <%= yield %>
