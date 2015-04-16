@@ -33,7 +33,9 @@ class SubjectsController < ApplicationController
   end
 
   def random
-    @subject = Subject.find(rand(Subject.count))
+    ids =  Subject.pluck(:id)
+    @subject = Subject.find(ids.sample)
     render 'show'
   end
+
 end
