@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   get '/about' => 'subjects#about'
   get '/resources' => 'subjects#resources'
-  get '/random' => 'subjects#random'
-
+  post 'subjects/search' => 'subjects#search', as: 'search_subjects'
+  get '/random' => 'subjects#random', as: 'sample_subject'
   resources :subjects
 
 end
