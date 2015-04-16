@@ -34,5 +34,6 @@ class SubjectsController < ApplicationController
 
   def random
     @subject = Subject.find(rand(Subject.count))
+    render 'show'
   end
 end
