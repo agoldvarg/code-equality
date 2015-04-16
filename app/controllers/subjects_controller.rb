@@ -13,12 +13,14 @@ class SubjectsController < ApplicationController
   end
 
   def search
-    @q = params[:search]
+    @q = params[:query]
     @results = Search.search(@q)
     if @results
       redirect_to subject_path(@results)
     else
-      redirect_to new_subject_path
+      # Need a working new_subject_path
+      # temporarily root_path
+      redirect_to root_path
     end
   end
 

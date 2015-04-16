@@ -4,7 +4,6 @@ require 'open-uri'
 parsed_subjects_array = []
 
 File.read("./db/data/raw_data.csv").split("\n").each do |subject|
-  # binding.pry
   first_name = subject.split(",")[1].strip
   last_name = subject.split(",")[0].strip
   parsed_subjects_array << "#{first_name} #{last_name}"

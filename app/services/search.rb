@@ -4,12 +4,12 @@ class Search
     # Check the db for the person, if they exist
     # reroute to that person's page
     # if not, use SubjectBuilder
-    new_search_term = clean_search(search_term)
+    new_search_term = Search.clean_search(search_term)
     # convert query to slug search term
-    results(new_search_term)
+    Search.results(new_search_term)
   end
 
-  def clean_search(search_field)
+  def self.clean_search(search_field)
     # clean the query
     search_field.gsub!(/ë/, 'e')
     search_field.gsub!(/ö/, 'o')
@@ -18,9 +18,9 @@ class Search
     search_field.strip
   end
 
-  def results(search_term)
-    if Subject.find(name: search_term)
-      Subject.find(name: search_term)
+  def self.results(search_term)
+    if Subject.find_by(name: search_term)
+      Subject.find_by(name: search_term)
     else
       nil
     end
