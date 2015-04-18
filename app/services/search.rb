@@ -9,7 +9,7 @@ class Search
     raw_query.gsub!(/ö/, 'o')
     raw_query.gsub!(/ğ/, 'g')
     raw_query.gsub!(/Ö/, 'O')
-    raw_query.strip
+    raw_query.split.map(&:capitalize).join(' ').strip
   end
 
   def search
