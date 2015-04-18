@@ -17,7 +17,7 @@ class SubjectsController < ApplicationController
     if @subject
       redirect_to subject_path(@subject)
     else
-      flash[:message] = "We couldn't find #{params[:query]} - but here's someone you should checkout!"
+      flash[:message] = "We couldn't find #{params[:query]} - but here's someone you should check out!"
       redirect_to sample_subject_path
     end
   end
