@@ -1,5 +1,11 @@
 <% if flash[:message] %>
-  <h1><center><%= flash[:message] %></center></h1>
+  <div class="row top-pad">
+    <div class="col-md-12 col-sm-12">
+      <div class="panel">
+        <h1 style="color: blue;"><center><%= flash[:message] %></center></h1>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <% if @subject.has_wiki_page %>
