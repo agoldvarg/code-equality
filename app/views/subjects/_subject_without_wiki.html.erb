@@ -3,9 +3,17 @@
   <h2>NEEDS A WIKIPEDIA PAGE</h2>
   <h3><%= link_to "Help get it started!", @subject.wiki_create_link, target: "_blank" %></h3>
 </div>
-<div class="jumbotron">
-  <h3>Here's what people are saying about her on Twitter:</h3>
-  <div id="tweets">
-    <%= render 'subjects/tweet', subject: @subject %>
+
+
+<div class="row top-pad">
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-body">
+        <h2>Here's what people are saying about her on Twitter:</h2>
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+          <%= render 'subjects/tweet', subject: @subject %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

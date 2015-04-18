@@ -1,3 +1,7 @@
+<% if flash[:message] %>
+  <h1><center><%= flash[:message] %></center></h1>
+<% end %>
+
 <% if @subject.has_wiki_page %>
   <%= render 'subject_with_wiki' %>
 <% else %>

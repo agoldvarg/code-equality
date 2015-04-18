@@ -13,19 +13,16 @@ class SubjectsController < ApplicationController
   end
 
   def search
-    @q = params[:query]
-    @results = Search.search(@q)
-    if @results
-      redirect_to subject_path(@results)
+    @subject = Search.new(params[:query]).search
+    if @subject
+      redirect_to subject_path(@subject)
     else
-      # Need a working new_subject_path
-      # temporarily root_path
-      redirect_to root_path
+      flash[:message] = "We couldn't find #{params[:query]} - but here's someone you should checkout!"
+      redirect_to sample_subject_path
     end
   end
 
   def create
-    
   end
 
   def new

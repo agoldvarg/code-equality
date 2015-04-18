@@ -1,28 +1,20 @@
 class Search
-  # SubjectBuilder.new(params[:name]) somewhere
-  def self.search(search_term)
-    # Check the db for the person, if they exist
-    # reroute to that person's page
-    # if not, use SubjectBuilder
-    new_search_term = Search.clean_search(search_term)
-    # convert query to slug search term
-    Search.results(new_search_term)
+
+  def initialize(query)
+    @raw_query = query
   end
 
-  def self.clean_search(search_field)
-    # clean the query
-    search_field.gsub!(/ë/, 'e')
-    search_field.gsub!(/ö/, 'o')
-    search_field.gsub!(/ğ/, 'g')
-    search_field.gsub!(/Ö/, 'O')
-    search_field.strip
+  def sanitize(raw_query)
+    raw_query.gsub!(/ë/, 'e')
+    raw_query.gsub!(/ö/, 'o')
+    raw_query.gsub!(/ğ/, 'g')
+    raw_query.gsub!(/Ö/, 'O')
+    raw_query.strip
   end
 
-  def self.results(search_term)
-    if Subject.find_by(name: search_term)
-      Subject.find_by(name: search_term)
-    else
-      nil
-    end
+  def search
+    sanitized_query = sanitize(@raw_query)
+    @result = Subject.where("name LIKE ?", "%#{sanitized_query}%").limit(1)[0]
   end
+
 end
