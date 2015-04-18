@@ -10,10 +10,15 @@
       <a class="navbar-brand" href="/">=CodeEquality=</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-search">
+      <% if !user_signed_in? %>
+        <%= link_to 'Log In', new_user_session_path, class: 'btn btn-default pull-right' %>
+      <% else %>
+        <%= link_to 'Log Out', destroy_user_session_path, class: 'btn btn-default pull-right' %>
+      <% end %>
       <%= form_tag(search_subjects_path, :class => "pull-right", :role => "search")  do %>
          <input id="searchbar" name="query" placeholder=" Enter Name Here..." type="text">
          <button type="submit" class="btn btn-default">Search</button>
-         <button type="button" class="btn btn-default">Sign In</button>
+         <!-- <button type="button" class="btn btn-default">Sign In</button> -->
       <% end %>
 
       <ul class="nav navbar-nav navbar-left">
