@@ -10,6 +10,12 @@
 </head>
 <body>
   <%= render 'layouts/navbar' %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <%= value %>
+    </div>
+  <% end %>
   <div class="container main">
     <% if params[:action] == 'random' %>
       <div class="refresh-button">

@@ -14,12 +14,16 @@
         <input id="searchbar" name="query" placeholder=" Enter Name Here..." type="text">
         <button type="submit" class="btn btn-default">Search</button>
         <% if !user_signed_in? %>
-          <li><%= link_to 'Sign In', new_user_session_path, class: 'btn btn-default' %></li>
+          <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-default' %>
+          <%= link_to 'Sign Up', new_user_path, class: 'btn btn-default' %>
         <% else %>
-          <%= link_to 'Sign Out', destroy_user_session_path, class: 'btn btn-default' %>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
         <% end %>
       <% end %>
-      <h5 class="nav navbar-nav navbar-right">Welcome, <%= current_user.email %>!</h5>
+
+      <% if user_signed_in? %>
+        <h5 class="nav navbar-nav navbar-right">Welcome, <%= current_user.name %>!</h5>
+      <% end %>
 
       <ul class="nav navbar-nav navbar-left">
         <li><a href="/about">About <span class="sr-only">(current)</span></a></li>

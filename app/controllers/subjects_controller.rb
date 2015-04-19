@@ -1,4 +1,5 @@
 class SubjectsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new]
 
   def about
   end
