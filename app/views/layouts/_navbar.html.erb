@@ -10,10 +10,20 @@
       <a class="navbar-brand" href="/">=CodeEquality=</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-search">
-      <%= form_tag(search_subjects_path, :class => "pull-right", :role => "search")  do %>
-         <input id="searchbar" name="query" placeholder=" Enter Name Here..." type="text">
-         <button type="submit" class="btn btn-default">Search</button>
-         <button type="button" class="btn btn-default">Sign In</button>
+      <%= form_tag(search_subjects_path, :class => "navbar-form navbar-right", :role => "search")  do %>
+        <input id="searchbar" name="query" placeholder=" Enter Name Here..." type="text">
+        <button type="submit" class="btn btn-default">Search</button>
+        <% if !user_signed_in? %>
+          <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-default' %>
+          <%= link_to 'Sign Up', new_user_path, class: 'btn btn-default' %>
+        <% else %>
+          <%= link_to 'Edit Account', edit_user_registration_path, class: 'btn btn-default' %>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
+        <% end %>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <h5 class="nav navbar-nav navbar-right">Welcome, <%= current_user.name %>!</h5>
       <% end %>
 
       <ul class="nav navbar-nav navbar-left">

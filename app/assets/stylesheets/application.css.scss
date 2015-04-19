@@ -180,3 +180,20 @@ h2 {
 #tweets {
   text-align: center;
 }
+
+.alert {
+  width: 40%;
+  margin: auto;
+}
+
+.alert-alert {
+  background-color: #ff0039;
+  border-color: #f0005e;
+  color: white;
+}
+
+.alert-notice {
+  background-color: #3fb618;
+  border-color: #4e9f15;
+  color: white;
+}
