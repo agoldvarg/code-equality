@@ -3,3 +3,8 @@
   padding: 0px;
   vertical-align: middle;
 }
+
+h5.nav.navbar-nav.navbar-right {
+  color: white;
+  padding-top: 1em;
+}
