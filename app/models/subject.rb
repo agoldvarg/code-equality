@@ -1,6 +1,4 @@
 class Subject < ActiveRecord::Base
-  # has_many  :tweets
-  # after_create :pull_tweets
 
   def has_page?(url)
     begin
@@ -11,6 +9,16 @@ class Subject < ActiveRecord::Base
         false
       end
     end
+  end
+
+  def sort_name
+    name_array = self.name.split(' ').reverse!
+    result = name_array.shift
+    name_array.reverse!
+    for i in 0...name_array.length
+      result << name_array[i]
+    end
+    result
   end
 
   def pull_tweets

@@ -1,0 +1,6 @@
+<%= form_for @subject do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br><br>
+  <%= f.submit "Add Individual", class: 'btn btn-primary' %>
+<% end %>
