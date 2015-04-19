@@ -1,5 +1,5 @@
 .top-pad {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .panel {
@@ -10,4 +10,22 @@
 
 .flash-message {
   color: #0E78FF;
+}
+
+div#articles-panel {
+  text-align: left;
+}
+
+.jumbotron h1 {
+  margin-top: 0px;
+}
+
+div#bio-div {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+h3#bio-text {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }

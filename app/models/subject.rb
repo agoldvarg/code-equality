@@ -38,4 +38,11 @@ class Subject < ActiveRecord::Base
     tweets
   end
 
+  def pull_articles
+    base_url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q="
+    q = self.name.gsub(" ","+")
+    json = JSON.load(open(base_url + q + "&sort=newest&api-key=#{ENV["nyt_key"]}"))
+    json["response"]["docs"].first(5)
+  end
+
 end

@@ -5,15 +5,32 @@
 </div>
 
 <div class="row top-pad">
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-body" id="bio-div">
+        <h3 id="bio-text"><%= @subject.bio %></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
   <div class="col-md-5">
     <div class="panel">
-      <h3><%= @subject.bio %></h3>
+      <div class="panel-header">
+        <h3>RECENT ARTICLES - NEW YORK TIMES</h3>
+      </div>
+      <div class="panel-body" id="articles-panel">
+        <%= render 'subjects/article', subject: @subject %>
+      </div>
     </div>
   </div>
   <div class="col-md-7">
     <div class="panel">
+      <div class="panel-header">
+        <h3>RECENT ACTIVITY FROM TWITTER:</h3>
+      </div>
       <div class="panel-body">
-        <h2>Here's what people are saying about her on Twitter:</h2>
         <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
           <%= render 'subjects/tweet', subject: @subject %>
         </div>
@@ -21,3 +38,4 @@
     </div>
   </div>
 </div>
+

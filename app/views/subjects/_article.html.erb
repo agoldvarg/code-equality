@@ -1,0 +1,3 @@
+<% @subject.pull_articles.each do |article| %>
+  <span><%= link_to article["headline"]["main"], url_for(article["web_url"]), target: "_blank" %></span><br>
+<% end %>
