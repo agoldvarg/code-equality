@@ -1,8 +1,9 @@
 <h3>User</h3>
+<p>Name: <%= @user.name %></p>
 <p>Email: <%= @user.email %></p>
-<p>This user has signed in <%= @user.sign_in_count %> times!</p>
+<p><%= @user.name %> has signed in <%= @user.sign_in_count %> times!</p>
 <% if !@user.subjects.empty? %>
-  <p>This user has created the following subjects in the database:</p><br>
+  <p><%= @user.name %> has created the following subjects in the database:</p><br>
   <ul>
     <% @user.subjects.each do |s| %>
       <li><%= link_to s.name, subject_path(s) %></li>
