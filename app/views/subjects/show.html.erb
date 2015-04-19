@@ -7,7 +7,7 @@
           <h1>You can <%= link_to "add this person to our database", new_subject_path %>.</h1>
           <h3>Or just check out this other awesome woman in technology!</h3>
         <% else %>
-          <h1>You can <%= link_to "sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session %> to add this person to our database.</h1>
+          <h1>You can <%= link_to "sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %> to add this person to our database.</h1>
           <h3>Or just check out this other awesome woman in technology!</h3>
         <% end %>
       </div>
