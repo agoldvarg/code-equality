@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @admin = User.first
-    unless @admin == current_user
+    @admin = [1, 3]
+    unless @admin.include?(current_user.id)
       redirect_to root_path, :alert => "Access denied."
     end
   end
