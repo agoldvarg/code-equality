@@ -8,7 +8,13 @@
     <div class="column">
       <table class="table">
         <tbody>
-          <% @users.each do |user| %>
+          <th>
+            <td>Name</td>
+            <td>Email</td>
+            <td># of Times Signed In</td>
+            <td># of Subjects Created</td>
+          </th>
+          <% @users.each do |user| %>  
             <tr>
               <%= render user %>
             </tr>

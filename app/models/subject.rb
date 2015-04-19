@@ -1,4 +1,8 @@
+require 'open-uri'
+require 'nokogiri'
+
 class Subject < ActiveRecord::Base
+  belongs_to :user
 
   def has_page?(url)
     begin
@@ -18,7 +22,7 @@ class Subject < ActiveRecord::Base
     for i in 0...name_array.length
       result << name_array[i]
     end
-    result
+    result.capitalize!
   end
 
   def pull_tweets
