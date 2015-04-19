@@ -1,7 +1,7 @@
 <h3>User</h3>
 <p>Email: <%= @user.email %></p>
 <p>This user has signed in <%= @user.sign_in_count %> times!</p>
-<% if @user.subjects %>
+<% if !@user.subjects.empty? %>
   <p>This user has created the following subjects in the database:</p><br>
   <ul>
     <% @user.subjects.each do |s| %>
