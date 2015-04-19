@@ -24,11 +24,11 @@ class SubjectsController < ApplicationController
   end
 
   def create
-
-    @user = User.find(current_user.id)
-    @subject = Subject.create(name: params[:subject][:name])
+    name = params[:subject][:name].split(' ').collect {|n| n.capitalize!}.join(' ')
+    @subject = Subject.create(name: name, user_id: current_user.id)
     @subject.sort_name = @subject.sort_name
     @subject.save
+    binding.pry
 
     sanitized_name = @subject.name
     sanitized_name.gsub!(/ë/, 'e')
@@ -40,9 +40,9 @@ class SubjectsController < ApplicationController
     
     if @subject.has_page?(base_wiki_url)
       data = Nokogiri::HTML(open(base_wiki_url))
-      bio_text = data.css("div#mw-content-text p:nth-child(2)").text.gsub(/\[[0-9]+\]/, '') + "  (Source: Wikipedia)"
+      bio_text = data.css("div#mw-content-text p:nth-child(2)").text.gsub(/\[[0-9]+\]/, '')
       if !bio_text.empty?
-        @subject.bio = bio_text
+        @subject.bio = bio_text + "  (Source: Wikipedia)"
       end
       @subject.wiki_page_link = base_wiki_url
       @subject.has_wiki_page = true
